@@ -1,0 +1,8 @@
+version: "2"
+services:
+  wolf:
+    image: nginx:alpine
+    volumes:
+      - ./build:/usr/share/nginx/html:ro
+    ports:
+      - "3600:80"
