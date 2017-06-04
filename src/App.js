@@ -13,6 +13,7 @@ import Demo1 from './modules/Demo1.jsx'
 import Demo2 from './modules/Demo2.jsx'
 import logo from './logo.svg';
 import './App.css';
+import DemoRedux from './modules/demo-redux/containers'
 
 const store = configureStore()
 
@@ -37,6 +38,7 @@ const App = () => (
             <div>
               <Route path="/about" component={Demo1}/>
               <Route path="/topics" component={Demo2}/>
+              <Route path="/demo" component={DemoRedux} />
             </div>
           </div>
         </div>
