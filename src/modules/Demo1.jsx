@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Demo1 = () => (
-  <div>
+  <div style={{ height: '555px', width: '100%', backgroundColor: 'red' }} >
     88888
-</div>
+  </div>
 );
 
 export default Demo1
