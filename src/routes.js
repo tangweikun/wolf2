@@ -1,5 +1,5 @@
 import React from 'react'
-import { IndexRoute, Route, Link, IndexRedirect, Redirect } from 'react-router'
+import { Route } from 'react-router'
 
 import Demo1 from './modules/Demo1.jsx'
 import Demo2 from './modules/Demo2.jsx'

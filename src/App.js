@@ -1,17 +1,9 @@
 import React, { Component } from 'react'
-
 import MenuItem from 'material-ui/MenuItem'
-
 import Menu from 'material-ui/Menu'
 import { browserHistory } from 'react-router'
-
-
-import logo from './logo.svg';
-import './App.css';
-
-
-
-
+import logo from './logo.svg'
+import './App.css'
 
 export default class App extends Component {
   render () {

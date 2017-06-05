@@ -10,7 +10,6 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { Router, browserHistory } from 'react-router'
 import configureStore from './configureStore'
 import registerServiceWorker from './registerServiceWorker'
-import { Route } from 'react-router'
 import routes from './routes'
 import './index.css'
 
