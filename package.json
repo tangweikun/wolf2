@@ -7,6 +7,7 @@
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "history": "^4.6.1",
+    "http-server": "^0.10.0",
     "jest": "^19.0.2",
     "material-ui": "^0.18.1",
     "react": "^15.5.4",
@@ -17,7 +18,8 @@
     "react-tap-event-plugin": "^2.0.1",
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.1.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:server": "http-server -p 3000 ./build"
   }
 }
