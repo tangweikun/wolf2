@@ -1,8 +1,6 @@
 version: "2"
 services:
   wolf:
-    image: nginx:alpine
-    volumes:
-      - ./build:/usr/share/nginx/html:ro
+    image: daocloud.io/tangweikun/wolf
     ports:
-      - "3600:80"
+      - 3600:3000
