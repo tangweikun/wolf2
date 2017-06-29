@@ -12,9 +12,9 @@ export default class App extends Component {
         <div className="App-sidebar">
           <div className="App-sidebar-title">KeepLearning</div>
             <Menu onItemTouchTap={() => { console.log(454)}}>
-              <MenuItem onTouchTap={() => { browserHistory.push('/about')}}>Menu Item22</MenuItem>
-              <MenuItem onTouchTap={() => { browserHistory.push('/demo')}}>Menu Item 44</MenuItem>
-            <MenuItem onTouchTap={() => { browserHistory.push('/minion')}}>小黄人</MenuItem>
+              <MenuItem onTouchTap={() => { browserHistory.push('/about')}}>读书记录</MenuItem>
+              <MenuItem onTouchTap={() => { browserHistory.push('/demo')}}>我的体重</MenuItem>
+              <MenuItem onTouchTap={() => { browserHistory.push('/minion')}}>小黄人</MenuItem>
             </Menu>
         </div>
         <div className="App-header">
