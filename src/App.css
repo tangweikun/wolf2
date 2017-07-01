@@ -21,8 +21,7 @@
   position: relative;
   left: 256px;
   top: 70px;
-  height: 200px;
-  width: 100%;
+  width: calc(100% - 256px);
   background-color: rgba(0, 0, 0, .13);
 }
 

@@ -6,20 +6,38 @@ import logo from './logo.svg'
 import './App.css'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { title: 'Keep Learning' }
+  }
   render () {
+    const sidebarList = [
+      { name: '读书记录', path: '/about' },
+      { name: '体重监测', path: '/demo' },
+      { name: 'CSS漫展', path: '/comicon' },
+      { name: '小黄人', path: '/minion' },
+    ]
+
     return (
       <div className="App">
         <div className="App-sidebar">
           <div className="App-sidebar-title">KeepLearning</div>
             <Menu onItemTouchTap={() => { console.log(454)}}>
-              <MenuItem onTouchTap={() => { browserHistory.push('/about')}}>Menu Item22</MenuItem>
-              <MenuItem onTouchTap={() => { browserHistory.push('/demo')}}>Menu Item 44</MenuItem>
-            <MenuItem onTouchTap={() => { browserHistory.push('/minion')}}>小黄人</MenuItem>
+              {
+                sidebarList.map(({ name, path }) =>
+                  <MenuItem onTouchTap={() => {
+                    browserHistory.push(path)
+                    this.setState({ title: name })
+                  }}>
+                    {name}
+                  </MenuItem>
+                )
+              }
             </Menu>
         </div>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <label>Keep Learning</label>
+          <label>{this.state.title}</label>
         </div>
         <div className="App-body">
             {this.props.children}
