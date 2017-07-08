@@ -21,6 +21,8 @@ export const PROPERTY = [
   { date: '1702', income: 6530, outlay: 5263, netIncome: 1267, totalAssets: 11191 },
   { date: '1703', income: 6800, outlay: 3805, netIncome: 2995, totalAssets: 14186 },
   { date: '1704', income: 15130, outlay: 10400, netIncome: 4730, totalAssets: 18916 },
+  { date: '1705', income: 20855, outlay: 11041, netIncome: 9814, totalAssets: 28730 },
+  { date: '1706', income: 10030, outlay: 7908, netIncome: 2122, totalAssets: 31852 },
 ]
 
 export const PROPERTY_LABEL = {
