@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router'
 
 import ReadingList from './modules/readingList/containers'
-import Property from './modules/property.jsx'
+import Property from './modules/property'
 import DemoRedux from './modules/demo-redux/containers'
 import App from './App'
 import Minion from './modules/minion/index.jsx'
