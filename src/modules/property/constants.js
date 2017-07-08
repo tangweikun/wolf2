@@ -23,6 +23,14 @@ export const PROPERTY = [
   { date: '1704', income: 15130, outlay: 10400, netIncome: 4730, totalAssets: 18916 },
 ]
 
+export const PROPERTY_LABEL = {
+  date: '日期',
+  totalAssets: '总资产',
+  netIncome: '月盈余',
+  income: '月收入',
+  outlay: '月支出',
+}
+
 export const CATEGORY = {
   totalAssets: { text: '总资产', color: "#c55167" },
   netIncome: { text: '月度盈余', color: "#aa5bc8" },

@@ -3,4 +3,4 @@ services:
   wolf:
     image: daocloud.io/tangweikun/wolf
     ports:
-      - 3600:3000
+      - 80:3000
