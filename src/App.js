@@ -16,6 +16,8 @@ export default class App extends Component {
       { name: '体重监测', path: '/demo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: '小黄人', path: '/minion' },
+      { name: 'Lodash', path: '/' },
+      { name: '资产', path: '/property'},
     ]
 
     return (
