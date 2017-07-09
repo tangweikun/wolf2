@@ -2,31 +2,36 @@ import React from 'react'
 import { PROPERTY, PROPERTY_LABEL } from './constants'
 import './list.css'
 
-const PropertyList = () => (
-  <div className='Property-list-container'>
-    <div className='Property-list-th'>
+const getTh = () => (
+  <div className='Property-list-th'>
+    {
+      Object.values(PROPERTY_LABEL).map((label, index) => (
+        <div className='Property-list-td' key={`${label}-${index}`}>
+          {label}
+        </div>
+      ))
+    }
+  </div>
+)
+
+const getTr = () => (
+  PROPERTY.map((item, i) => (
+    <div className='Property-list-tr' key={`${item}-${i}`}>
       {
-        Object.values(PROPERTY_LABEL).map(label => (
-          <div className='Property-list-td'>
-            {label}
+        Object.values(item).map((value, index) => (
+          <div className='Property-list-td' key={`${value}-${index}`}>
+            {value}
           </div>
         ))
       }
     </div>
+  ))
+)
 
-    {
-      PROPERTY.map(item => (
-        <div className='Property-list-tr'>
-          {
-            Object.values(item).map(value => (
-              <div className='Property-list-td'>
-                {value}
-              </div>
-            ))
-          }
-        </div>
-      ))
-    }
+const PropertyList = () => (
+  <div className='Property-list-container'>
+    { getTh() }
+    { getTr() }
   </div>
 )
 

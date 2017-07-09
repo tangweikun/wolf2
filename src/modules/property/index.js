@@ -12,7 +12,7 @@ const Property = () => (
     </Tab>
     {
       Object.entries(CATEGORY).map(([key, { text, color }]) => (
-        <Tab label={text}>
+        <Tab label={text} key={key}>
           <PropertyLineChart color={color} dataKey={key} />
         </Tab>
       ))

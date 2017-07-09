@@ -27,10 +27,13 @@ export default class App extends Component {
             <Menu onItemTouchTap={() => { console.log(454)}}>
               {
                 sidebarList.map(({ name, path }) =>
-                  <MenuItem onTouchTap={() => {
-                    browserHistory.push(path)
-                    this.setState({ title: name })
-                  }}>
+                  <MenuItem
+                    key={name}
+                    onTouchTap={() => {
+                      browserHistory.push(path)
+                      this.setState({ title: name })
+                    }}
+                  >
                     {name}
                   </MenuItem>
                 )
