@@ -13,7 +13,6 @@ import registerServiceWorker from './registerServiceWorker'
 import routes from './routes'
 import './index.css'
 
-
 const store = configureStore()
 
 const history = syncHistoryWithStore(browserHistory, store)
