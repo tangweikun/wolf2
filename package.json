@@ -10,6 +10,7 @@
     "http-server": "^0.10.0",
     "jest": "^19.0.2",
     "material-ui": "^0.18.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
