@@ -1,52 +1,30 @@
+---
 language: node_js
-
 node_js:
-  - "0.10"
-  - "0.12"
-  - "4"
-  - "5"
-  # By `v6.10.2` we hit this error:
-  # - https://github.com/FormidableLabs/builder/issues/141
-  # - https://github.com/substack/node-mkdirp/pull/110
-  # so pin for now.
-  - "6.9.5"
-
-# Use container-based Travis infrastructure.
-sudo: false
-
-branches:
-  only:
-    - master
-
-env:
-  - TEST_NPM_VERSION=2
-  - TEST_NPM_VERSION=3
-  - TEST_NPM_VERSION=4
-
-matrix:
-  exclude:
-    - node_js: "5"
-      env: TEST_NPM_VERSION=2
-    - node_js: "6.9.5"
-      env: TEST_NPM_VERSION=2
-
-before_install:
-  # GUI for real browsers.
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
-  # Use the requested version of npm
-  - npm install -g "npm@$TEST_NPM_VERSION"
-
+  - 6
+  - 8
+cache:
+  directories:
+  - node_modules
+  - packages/create-react-app/node_modules
+  - packages/react-scripts/node_modules
+install: true
 script:
-  - npm --version
-  - npm run builder:check-ci
-
-  # Do some primitive bash functional tests.
-  - bash test/func/test.sh
-
-  # Manually send coverage reports to coveralls.
-  # - Aggregate client results
-  # - Single server and func test results
-  - ls  coverage/server/lcov.info | cat
-  - cat coverage/server/lcov.info | node_modules/.bin/coveralls || echo "Coveralls upload failed"
+ - 'if [ $TEST_SUITE = "simple" ]; then tasks/e2e-simple.sh; fi'
+ - 'if [ $TEST_SUITE = "installs" ]; then tasks/e2e-installs.sh; fi'
+ - 'if [ $TEST_SUITE = "kitchensink" ]; then tasks/e2e-kitchensink.sh; fi'
+env:
+  global:
+    - USE_YARN=no
+  matrix:
+    - TEST_SUITE=simple
+    - TEST_SUITE=installs
+    - TEST_SUITE=kitchensink
+matrix:
+  include:
+    - node_js: 0.10
+      env: TEST_SUITE=simple
+# There's a weird Yarn/Lerna bug related to prerelease versions.
+# TODO: reenable after we ship 1.0.
+#    - node_js: 6
+#      env: USE_YARN=yes TEST_SUITE=simple
