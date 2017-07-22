@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const formData = [
   {
@@ -22,19 +22,19 @@ const formData = [
     createdAt: new Date('2016-11-03'),
     author: 'ruanyifeng',
   },
-]
+];
 
-export default function() {
+export default function () {
   return (
     <div>
       {
         formData.map(({ name, _id, author, readAt }) =>
-          <div key={_id}>
+          (<div key={_id}>
             <span>{name}</span>
             <span>{author}</span>
             <span>{readAt.getTime()}</span>
-          </div>)
+          </div>))
       }
     </div>
-  )
+  );
 }

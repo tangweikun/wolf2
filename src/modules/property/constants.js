@@ -23,7 +23,7 @@ export const PROPERTY = [
   { date: '1704', income: 15130, outlay: 10400, netIncome: 4730, totalAssets: 18916 },
   { date: '1705', income: 20855, outlay: 11041, netIncome: 9814, totalAssets: 28730 },
   { date: '1706', income: 10030, outlay: 7908, netIncome: 2122, totalAssets: 31852 },
-]
+];
 
 export const PROPERTY_LABEL = {
   date: '日期',
@@ -31,11 +31,11 @@ export const PROPERTY_LABEL = {
   netIncome: '月盈余',
   income: '月收入',
   outlay: '月支出',
-}
+};
 
 export const CATEGORY = {
-  totalAssets: { text: '总资产', color: "#c55167" },
-  netIncome: { text: '月度盈余', color: "#aa5bc8" },
-  income: { text: '月度收入', color: "#82ca9d" },
-  outlay: { text: '月度支出', color: "#8884d8" },
-}
+  totalAssets: { text: '总资产', color: '#c55167' },
+  netIncome: { text: '月度盈余', color: '#aa5bc8' },
+  income: { text: '月度收入', color: '#82ca9d' },
+  outlay: { text: '月度支出', color: '#8884d8' },
+};

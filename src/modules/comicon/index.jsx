@@ -1,5 +1,5 @@
 import React from 'react';
-import Minimon from '../minion/index.jsx';
+import Minimon from '../minion';
 
 export default function () {
   return (

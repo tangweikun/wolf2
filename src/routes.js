@@ -5,7 +5,7 @@ import ReadingList from './modules/readingList/containers';
 import Property from './modules/property';
 import DemoRedux from './modules/demo-redux/containers';
 import App from './App';
-import Minion from './modules/minion/index.jsx';
+import Minion from './modules/minion';
 import Comicon from './modules/comicon';
 
 
