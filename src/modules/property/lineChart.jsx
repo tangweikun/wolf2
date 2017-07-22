@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   LineChart,
   Line,
@@ -7,9 +7,9 @@ import {
   YAxis,
   Tooltip,
   Legend,
-} from 'recharts';
+} from 'recharts'
 
-import { PROPERTY } from './constants';
+import { PROPERTY } from './constants'
 
 const PropertyLineChart = ({ color, dataKey }) => (
   <LineChart
@@ -25,6 +25,6 @@ const PropertyLineChart = ({ color, dataKey }) => (
     <Legend />
     <Line type="monotone" dataKey={dataKey} stroke={color} />
   </LineChart>
-);
+)
 
-export default PropertyLineChart;
+export default PropertyLineChart

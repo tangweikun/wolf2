@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import List from './list';
+import List from './list'
 
 export default class App extends Component {
   render() {
-    const { changeValue, inputValue } = this.props;
+    const { changeValue, inputValue } = this.props
 
     return (
       <div>
@@ -15,6 +15,6 @@ export default class App extends Component {
         />
         <p>{inputValue}</p>
       </div>
-    );
+    )
   }
 }

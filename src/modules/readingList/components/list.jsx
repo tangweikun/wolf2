@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const formData = [
   {
@@ -22,7 +22,7 @@ const formData = [
     createdAt: new Date('2016-11-03'),
     author: 'ruanyifeng',
   },
-];
+]
 
 export default function () {
   return (
@@ -36,5 +36,5 @@ export default function () {
           </div>))
       }
     </div>
-  );
+  )
 }

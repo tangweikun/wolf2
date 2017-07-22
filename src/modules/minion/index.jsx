@@ -1,5 +1,5 @@
-import React from 'react';
-import './minion.css';
+import React from 'react'
+import './minion.css'
 
 const Minimon = () => (
   <div>
@@ -37,6 +37,6 @@ const Minimon = () => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Minimon;
+export default Minimon
