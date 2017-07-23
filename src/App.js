@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MenuItem from 'material-ui/MenuItem'
 import Menu from 'material-ui/Menu'
+import axios from 'axios'
 import { browserHistory } from 'react-router'
 import logo from './logo.svg'
 import './App.css'
@@ -10,6 +11,21 @@ export default class App extends Component {
     super(props)
     this.state = { title: 'Keep Learning' }
   }
+  componentWillMount() {
+    // TODO should remove
+    axios.get('/', {
+      params: {
+        ID: 12345,
+      },
+    })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   render() {
     const sidebarList = [
       { name: '读书记录', path: '/about' },
