@@ -14,9 +14,7 @@ export default class App extends Component {
   componentWillMount() {
     // TODO should remove
     axios.get('/', {
-      params: {
-        ID: 12345,
-      },
+
     })
       .then((response) => {
         console.log(response)
@@ -24,6 +22,19 @@ export default class App extends Component {
       .catch((error) => {
         console.log(error)
       })
+    console.log('----')
+
+
+    axios.post('r', {
+      firstName: 'Fred',
+      lastName: 'Flintstone',
+    })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   }
 
   render() {
