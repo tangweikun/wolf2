@@ -23,7 +23,6 @@
   left: 256px;
   top: 70px;
   width: calc(100% - 256px);
-  /*background-color: rgba(0, 0, 0, .13);*/
 }
 
 .App-sidebar {

@@ -24,5 +24,7 @@ ReactDOM.render(
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
       <Router history={history} routes={routes} />
     </MuiThemeProvider>
-  </Provider>, document.getElementById('root'))
+  </Provider>,
+  document.getElementById('root'),
+)
 registerServiceWorker()
