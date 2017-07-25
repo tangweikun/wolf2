@@ -26,7 +26,6 @@ const getTr = () =>
 
 const PropertyList = () =>
   (<div className="Property-list-container">
-    <RaisedButton label="新增" primary />
     <DialogExampleDialogDatePicker />
     {getTh()}
     {getTr()}
