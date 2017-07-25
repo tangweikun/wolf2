@@ -5,8 +5,13 @@ export default class App extends Component {
     const { changeValue, inputValue } = this.props
     return (
       <div>
-        <input value={inputValue} onChange={e => changeValue('inputValue', e.target.value)} />
-        <p>{inputValue}</p>
+        <input
+          value={inputValue}
+          onChange={e => changeValue('inputValue', e.target.value)}
+        />
+        <p>
+          {inputValue}
+        </p>
       </div>
     )
   }

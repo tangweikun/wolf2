@@ -1,6 +1,8 @@
 import React from 'react'
+import RaisedButton from 'material-ui/RaisedButton'
 import { PROPERTY, PROPERTY_LABEL } from './constants'
 import './list.css'
+import DialogExampleDialogDatePicker from './dialog.jsx'
 
 const getTh = () =>
   (<div className="Property-list-th">
@@ -24,6 +26,8 @@ const getTr = () =>
 
 const PropertyList = () =>
   (<div className="Property-list-container">
+    <RaisedButton label="新增" primary />
+    <DialogExampleDialogDatePicker />
     {getTh()}
     {getTr()}
   </div>)
