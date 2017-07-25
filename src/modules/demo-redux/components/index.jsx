@@ -1,18 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default class App extends Component {
-  render() {
-    const { changeValue, inputValue } = this.props
-    return (
-      <div>
-        <input
-          value={inputValue}
-          onChange={e => changeValue('inputValue', e.target.value)}
-        />
-        <p>
-          {inputValue}
-        </p>
-      </div>
-    )
-  }
+export default function App({ changeValue, inputValue }) {
+  return (
+    <div>
+      <input
+        value={inputValue}
+        onChange={e => changeValue('inputValue', e.target.value)}
+      />
+      <p>
+        {inputValue}
+      </p>
+    </div>
+  )
+}
+
+App.propTypes = {
+  changeValue: PropTypes.func.isRequired,
+  inputValue: PropTypes.number.isRequired,
 }

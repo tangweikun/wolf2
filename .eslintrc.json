@@ -10,6 +10,7 @@
   "rules": {
   "complexity": ["warn", 5],
   "semi": ["error", "never"],
+  "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   "no-console": 0
   }
 }
