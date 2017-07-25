@@ -15,6 +15,7 @@
   height: 40px;
   padding: 15px;
   color: white;
+  z-index: 9999;
 }
 
 .App-body {
@@ -45,6 +46,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

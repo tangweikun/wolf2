@@ -13,9 +13,8 @@ export default class App extends Component {
   }
   componentWillMount() {
     // TODO should remove
-    axios.get('/', {
-
-    })
+    axios
+      .get('/', {})
       .then((response) => {
         console.log(response)
       })
@@ -24,17 +23,17 @@ export default class App extends Component {
       })
     console.log('----')
 
-
-    axios.post('r', {
-      firstName: 'Fred',
-      lastName: 'Flintstone',
-    })
-    .then((response) => {
-      console.log(response)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    axios
+      .post('r', {
+        firstName: 'Fred',
+        lastName: 'Flintstone',
+      })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render() {
@@ -51,28 +50,34 @@ export default class App extends Component {
       <div className="App">
         <div className="App-sidebar">
           <div className="App-sidebar-title">KeepLearning</div>
-          <Menu onItemTouchTap={() => { console.log(454) }}>
-            {
-                sidebarList.map(({ name, path }) =>
-                  (<MenuItem
-                    key={name}
-                    onTouchTap={() => {
-                      browserHistory.push(path)
-                      this.setState({ title: name })
-                    }}
-                  >
-                    {name}
-                  </MenuItem>),
-                )
-              }
+          <Menu
+            onItemTouchTap={() => {
+              console.log(454)
+            }}
+          >
+            {sidebarList.map(({ name, path }) =>
+              (<MenuItem
+                key={name}
+                onTouchTap={() => {
+                  browserHistory.push(path)
+                  this.setState({ title: name })
+                }}
+              >
+                {name}
+              </MenuItem>),
+            )}
           </Menu>
         </div>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <label>{this.state.title}</label>
-        </div>
-        <div className="App-body">
-          {this.props.children}
+        <div>
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <label>
+              {this.state.title}
+            </label>
+          </div>
+          <div className="App-body">
+            {this.props.children}
+          </div>
         </div>
       </div>
     )
