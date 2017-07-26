@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { pick } from 'lodash'
+import moment from 'moment'
 
 import { PROPERTY_LABEL } from './constants'
 import './list.css'
@@ -11,42 +11,40 @@ export default class PropertyList extends React.Component {
     super(props)
     this.state = { properties: null }
   }
+
   componentDidMount() {
     axios
       .get('findProperty', {})
-      .then((response) => {
-        this.setState({
-          properties: response.data,
-        })
-      })
+      .then(response => this.setState({ properties: response.data }))
       .catch((error) => {
         console.log(error)
       })
   }
 
-  getTr = () => {
-    const properties = this.state.properties.map(item => ({
-      ...item,
+  getProperties = () =>
+    this.state.properties.map(({ date, income, outlay }) => ({
+      date: moment(date).format('YYYY/MM/DD'),
       totalAssets: 10000,
-      netIncome: item.income - item.outlay,
+      netIncome: income - outlay,
+      income,
+      outlay,
     }))
-    return properties.map(item =>
-      (<div className="Property-list-tr" key={item._id}>
-        {Object.entries(
-          pick(item, ['date', 'totalAssets', 'netIncome', 'income', 'outlay']),
-        ).map(([key, value]) =>
+
+  getTr = () =>
+    this.getProperties().map(item =>
+      (<div className="Property-list-tr" key={Math.random()}>
+        {Object.entries(item).map(([key, value]) =>
           (<div className="Property-list-td" key={key}>
             {value}
           </div>),
         )}
       </div>),
     )
-  }
 
   getTh = () =>
     (<div className="Property-list-th">
-      {Object.values(PROPERTY_LABEL).map((label, index) =>
-        (<div className="Property-list-td" key={`${label}-${index}`}>
+      {Object.values(PROPERTY_LABEL).map(label =>
+        (<div className="Property-list-td" key={Math.random()}>
           {label}
         </div>),
       )}
