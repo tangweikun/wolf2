@@ -6,7 +6,7 @@ import DatePicker from 'material-ui/DatePicker'
 import TextField from 'material-ui/TextField'
 import axios from 'axios'
 
-export default class DialogExampleDialogDatePicker extends React.Component {
+export default class DialogProperty extends React.Component {
   constructor(props) {
     super(props)
     this.state = { open: false, income: null, outlay: null, date: null }
