@@ -40,7 +40,7 @@ export default class DialogExampleDialogDatePicker extends React.Component {
         onTouchTap={() => {
           this.handleClose()
           axios
-            .post('r', {
+            .post('insertProperty', {
               date: this.state.date,
               income: this.state.income,
               outcome: this.state.outcome,
