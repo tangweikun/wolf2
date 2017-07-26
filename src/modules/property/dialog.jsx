@@ -31,19 +31,19 @@ export default class DialogProperty extends React.Component {
 
   handleInsertProperty = () => {
     this.handleClose()
-    const { date, income, outcome } = this.state
+    const { date, income, outlay } = this.state
     axios
       .post('insertProperty', {
         date,
         income,
-        outcome,
+        outlay,
       })
       .then((response) => {
         console.log(response)
         this.setState({
           date: null,
           income: null,
-          outcome: null,
+          outlay: null,
         })
       })
       .catch((error) => {
@@ -60,7 +60,7 @@ export default class DialogProperty extends React.Component {
         onTouchTap={this.handleInsertProperty}
       />,
     ]
-    const { open, income, date, outcome } = this.state
+    const { open, income, date, outlay } = this.state
 
     return (
       <div>
@@ -81,8 +81,8 @@ export default class DialogProperty extends React.Component {
           <br />
           <TextField
             hintText="月支出"
-            name="outcome"
-            value={outcome}
+            name="outlay"
+            value={outlay}
             onChange={this.handleChangeText}
           />
           <DatePicker hintText="日期" onChange={this.handleChange} value={date} />

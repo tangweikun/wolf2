@@ -1,33 +1,66 @@
 import React from 'react'
-import { PROPERTY, PROPERTY_LABEL } from './constants'
+import axios from 'axios'
+import { pick } from 'lodash'
+
+import { PROPERTY_LABEL } from './constants'
 import './list.css'
 import DialogProperty from './dialog'
 
-const getTh = () =>
-  (<div className="Property-list-th">
-    {Object.values(PROPERTY_LABEL).map((label, index) =>
-      (<div className="Property-list-td" key={`${label}-${index}`}>
-        {label}
-      </div>),
-    )}
-  </div>)
+export default class PropertyList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { properties: null }
+  }
+  componentDidMount() {
+    axios
+      .get('findProperty', {})
+      .then((response) => {
+        this.setState({
+          properties: response.data,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
-const getTr = () =>
-  PROPERTY.map((item, i) =>
-    (<div className="Property-list-tr" key={`${item}-${i}`}>
-      {Object.values(item).map((value, index) =>
-        (<div className="Property-list-td" key={`${value}-${index}`}>
-          {value}
+  getTr = () => {
+    const properties = this.state.properties.map(item => ({
+      ...item,
+      totalAssets: 10000,
+      netIncome: item.income - item.outlay,
+    }))
+    return properties.map(item =>
+      (<div className="Property-list-tr" key={item._id}>
+        {Object.entries(
+          pick(item, ['date', 'totalAssets', 'netIncome', 'income', 'outlay']),
+        ).map(([key, value]) =>
+          (<div className="Property-list-td" key={key}>
+            {value}
+          </div>),
+        )}
+      </div>),
+    )
+  }
+
+  getTh = () =>
+    (<div className="Property-list-th">
+      {Object.values(PROPERTY_LABEL).map((label, index) =>
+        (<div className="Property-list-td" key={`${label}-${index}`}>
+          {label}
         </div>),
       )}
-    </div>),
-  )
+    </div>)
 
-const PropertyList = () =>
-  (<div className="Property-list-container">
-    <DialogProperty />
-    {getTh()}
-    {getTr()}
-  </div>)
+  render() {
+    if (!this.state.properties) return null
 
-export default PropertyList
+    return (
+      <div className="Property-list-container">
+        <DialogProperty />
+        {this.getTh()}
+        {this.getTr()}
+      </div>
+    )
+  }
+}
