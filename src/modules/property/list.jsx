@@ -1,8 +1,7 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
 import { PROPERTY, PROPERTY_LABEL } from './constants'
 import './list.css'
-import DialogExampleDialogDatePicker from './dialog.jsx'
+import DialogExampleDialogDatePicker from './dialog'
 
 const getTh = () =>
   (<div className="Property-list-th">

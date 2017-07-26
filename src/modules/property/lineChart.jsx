@@ -1,5 +1,14 @@
-import React, { PropTypes } from 'react'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts'
+import React from 'react'
+import PropTypes from 'prop-types'
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from 'recharts'
 
 import { PROPERTY } from './constants'
 
