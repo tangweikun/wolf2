@@ -26,9 +26,29 @@ export default class DialogExampleDialogDatePicker extends React.Component {
 
   handleChangeText = (event) => {
     const { name, value } = event.target
-    this.setState({
-      [name]: value,
-    })
+    this.setState({ [name]: value })
+  }
+
+  handleInsertProperty = () => {
+    this.handleClose()
+    const { date, income, outcome } = this.state
+    axios
+      .post('insertProperty', {
+        date,
+        income,
+        outcome,
+      })
+      .then((response) => {
+        console.log(response)
+        this.setState({
+          date: null,
+          income: null,
+          outcome: null,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render() {
@@ -37,28 +57,10 @@ export default class DialogExampleDialogDatePicker extends React.Component {
         label="确定"
         primary
         keyboardFocused
-        onTouchTap={() => {
-          this.handleClose()
-          axios
-            .post('insertProperty', {
-              date: this.state.date,
-              income: this.state.income,
-              outcome: this.state.outcome,
-            })
-            .then((response) => {
-              console.log(response)
-              this.setState({
-                date: null,
-                income: null,
-                outcome: null,
-              })
-            })
-            .catch((error) => {
-              console.log(error)
-            })
-        }}
+        onTouchTap={this.handleInsertProperty}
       />,
     ]
+    const { open, income, date, outcome } = this.state
 
     return (
       <div>
@@ -67,27 +69,23 @@ export default class DialogExampleDialogDatePicker extends React.Component {
           title="新增一条资产记录"
           actions={actions}
           modal={false}
-          open={this.state.open}
+          open={open}
           onRequestClose={this.handleClose}
         >
           <TextField
             hintText="月收入"
             name="income"
-            value={this.state.income}
+            value={income}
             onChange={this.handleChangeText}
           />
           <br />
           <TextField
             hintText="月支出"
             name="outcome"
-            value={this.state.outcome}
+            value={outcome}
             onChange={this.handleChangeText}
           />
-          <DatePicker
-            hintText="日期"
-            onChange={this.handleChange}
-            value={this.state.date}
-          />
+          <DatePicker hintText="日期" onChange={this.handleChange} value={date} />
         </Dialog>
       </div>
     )
