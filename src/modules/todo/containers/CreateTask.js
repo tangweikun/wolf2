@@ -3,7 +3,7 @@ import { changeValue } from '../actions'
 import Component from '../components/CreateTask'
 
 const mapStateToProps = state => ({
-  inputValue: state.todoList.inputValue,
+  newTask: state.todoList.newTask,
 })
 
 export default connect(mapStateToProps, { changeValue })(Component)
