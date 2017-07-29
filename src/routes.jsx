@@ -3,7 +3,7 @@ import { Route } from 'react-router'
 
 import ReadingList from './modules/readingList/containers'
 import Property from './modules/property'
-import TodoList from './modules/todo/components'
+import TodoList from './modules/todoList/components'
 import App from './App'
 import Minion from './modules/minion'
 import Comicon from './modules/comicon'
