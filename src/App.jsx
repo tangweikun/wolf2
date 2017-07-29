@@ -26,7 +26,7 @@ export default class App extends Component {
   render() {
     const sidebarList = [
       { name: '读书记录', path: '/about' },
-      { name: '体重监测', path: '/demo' },
+      { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: '小黄人', path: '/minion' },
       { name: 'Lodash', path: '/' },

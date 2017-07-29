@@ -12,7 +12,7 @@ const routes = (
   <Route path="/" component={App}>
     <Route path="/about" component={ReadingList} />
     <Route path="/property" component={Property} />
-    <Route path="/demo" component={TodoList} />
+    <Route path="/todo" component={TodoList} />
     <Route path="/minion" component={Minion} />
     <Route path="/comicon" component={Comicon} />
   </Route>
