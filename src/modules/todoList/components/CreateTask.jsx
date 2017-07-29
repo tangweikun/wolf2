@@ -1,10 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import io from 'socket.io-client'
+
+const socket = io('127.0.0.1:4000', {
+  path: '/stomp',
+  'force new connection': true,
+  transports: ['xhr-polling', 'websocket', 'polling', 'flashsocket'],
+})
 
 export default class CreateTask extends React.Component {
   handleInsertTask = () => {
     const { newTask, updateNewTask } = this.props
+    console.log('----->')
+    socket.emit('chat message', newTask)
+    socket.emit('he', '---->>>')
+    console.log('=====')
+    socket.on('ww', m => console.log(m, '0909'))
+    socket.on('chat message', msg => console.log(msg, 'pppp'))
 
     if (newTask) {
       axios
