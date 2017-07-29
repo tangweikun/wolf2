@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import CreateItem from '../containers/CreateItem'
-import TodoItem from './Item'
+import CreateTask from '../containers/CreateTask'
+import Task from './Task'
 
 export default class TodoList extends React.Component {
   render() {
@@ -15,8 +15,8 @@ export default class TodoList extends React.Component {
           border: '1px solid gray',
         }}
       >
-        <CreateItem />
-        <TodoItem />
+        <CreateTask />
+        <Task />
       </div>
     )
   }

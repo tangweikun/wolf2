@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class CreateItem extends React.Component {
+export default class CreateTask extends React.Component {
   render() {
     const { changeValue, inputValue } = this.props
     return (
@@ -16,7 +16,7 @@ export default class CreateItem extends React.Component {
   }
 }
 
-CreateItem.propTypes = {
+CreateTask.propTypes = {
   changeValue: PropTypes.func.isRequired,
   inputValue: PropTypes.number.isRequired,
 }

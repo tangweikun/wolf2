@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { changeValue } from '../actions'
-import Component from '../components/CreateItem'
+import Component from '../components/CreateTask'
 
 const mapStateToProps = state => ({
   inputValue: state.todoList.inputValue,
