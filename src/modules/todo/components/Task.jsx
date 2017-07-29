@@ -5,13 +5,12 @@ export default class Task extends React.Component {
   render() {
     return (
       <div style={{ width: '100%', backgroundColor: 'red', height: '50px' }}>
-        66
+        {this.props.text}
       </div>
     )
   }
 }
 
 Task.propTypes = {
-  changeValue: PropTypes.func.isRequired,
-  inputValue: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
 }

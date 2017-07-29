@@ -3,3 +3,8 @@ export const changeValue = (key, value) => ({
   key,
   value,
 })
+
+export const getTasks = tasks => ({
+  type: 'TASKS_GET',
+  tasks,
+})
