@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { PROPERTY_LABEL } from './constants'
 import './list.css'
-import DialogProperty from './Dialog1'
+import DialogProperty from './Dialog'
 
 const getTr = properties =>
   properties.map(item =>
