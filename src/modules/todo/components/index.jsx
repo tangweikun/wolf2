@@ -7,13 +7,6 @@ export default function App({ changeValue, inputValue }) {
   return (
     <div style={{ padding: '50px' }}>
       <TodoList />
-      <input
-        value={inputValue}
-        onChange={e => changeValue('inputValue', e.target.value)}
-      />
-      <p>
-        {inputValue}
-      </p>
     </div>
   )
 }
