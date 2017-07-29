@@ -3,9 +3,9 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 import axios from 'axios'
 import moment from 'moment'
 
-import PropertyLineChart from './LineChart'
+import PropertyLineChart from './LineChart1'
 import { CATEGORY } from './constants'
-import PropertyList from './List'
+import PropertyList from './List1'
 
 export default class Property extends React.Component {
   constructor(props) {
