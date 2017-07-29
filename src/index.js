@@ -12,7 +12,7 @@ import configureStore from './configureStore'
 import registerServiceWorker from './registerServiceWorker'
 import routes from './routes'
 import './index.css'
-import './api-config'
+import './apiConfig'
 
 const store = configureStore()
 
