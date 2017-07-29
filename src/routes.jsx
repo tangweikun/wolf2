@@ -3,11 +3,10 @@ import { Route } from 'react-router'
 
 import ReadingList from './modules/readingList/containers'
 import Property from './modules/property'
-import DemoRedux from './modules/demo-redux/containers'
+import DemoRedux from './modules/todo/containers'
 import App from './App'
 import Minion from './modules/minion'
 import Comicon from './modules/comicon'
-
 
 const routes = (
   <Route path="/" component={App}>
