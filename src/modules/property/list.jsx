@@ -35,7 +35,7 @@ function PropertyList({ properties }) {
 }
 
 PropertyList.propTypes = {
-  properties: PropTypes.arrayOf(PropTypes.object),
+  properties: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default PropertyList

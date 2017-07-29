@@ -10,15 +10,13 @@ import {
   Legend,
 } from 'recharts'
 
-import { PROPERTY } from './constants'
-
 const innerWidth = window.innerWidth
 
-const PropertyLineChart = ({ color, dataKey }) =>
+const PropertyLineChart = ({ color, dataKey, properties }) =>
   (<LineChart
     width={innerWidth * 0.75}
     height={600}
-    data={PROPERTY}
+    data={properties}
     margin={{ top: 30, right: 30, left: 30, bottom: 30 }}
   >
     <XAxis dataKey="date" />
@@ -32,6 +30,7 @@ const PropertyLineChart = ({ color, dataKey }) =>
 PropertyLineChart.propTypes = {
   color: PropTypes.string.isRequired,
   dataKey: PropTypes.string.isRequired,
+  properties: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default PropertyLineChart
