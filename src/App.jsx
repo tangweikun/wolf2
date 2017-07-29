@@ -25,11 +25,8 @@ export default class App extends Component {
 
   render() {
     const sidebarList = [
-      { name: '读书记录', path: '/about' },
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
-      { name: '小黄人', path: '/minion' },
-      { name: 'Lodash', path: '/' },
       { name: '资产', path: '/property' },
     ]
 
@@ -58,9 +55,9 @@ export default class App extends Component {
         <div>
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <label>
+            <span>
               {this.state.title}
-            </label>
+            </span>
           </div>
           <div className="App-body">
             {this.props.children}
