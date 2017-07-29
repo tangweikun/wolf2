@@ -1,5 +1,5 @@
-export const changeValue = (key, value) => ({
-  type: 'CHANGE_VALUE',
+export const updateNewTask = (key, value) => ({
+  type: 'TASKS_UPDATE_NEW_TASK',
   key,
   value,
 })

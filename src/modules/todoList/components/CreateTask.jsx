@@ -4,27 +4,24 @@ import axios from 'axios'
 
 export default class CreateTask extends React.Component {
   handleInsertTask = () => {
-    const { newTask, changeValue } = this.props
-    axios
-      .post('task', {
-        task: newTask,
-      })
-      .then((response) => {
-        console.log(response)
-        changeValue('newTask', '')
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    const { newTask, updateNewTask } = this.props
+
+    if (newTask) {
+      axios
+        .post('task', { task: newTask })
+        .then(() => updateNewTask('newTask', ''))
+        .catch(error => console.log(error))
+    }
   }
+
   render() {
-    const { changeValue, newTask } = this.props
+    const { updateNewTask, newTask } = this.props
     return (
       <div style={{ width: '100%', height: '30px' }}>
         <input
           style={{ width: '100%', height: '30px', border: 0, padding: 0 }}
           value={newTask}
-          onChange={e => changeValue('newTask', e.target.value)}
+          onChange={e => updateNewTask('newTask', e.target.value)}
           onBlur={this.handleInsertTask}
         />
       </div>
@@ -33,6 +30,6 @@ export default class CreateTask extends React.Component {
 }
 
 CreateTask.propTypes = {
-  changeValue: PropTypes.func.isRequired,
-  newTask: PropTypes.number.isRequired,
+  updateNewTask: PropTypes.func.isRequired,
+  newTask: PropTypes.string.isRequired,
 }

@@ -5,7 +5,7 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, key, value, tasks } = action
   switch (type) {
-    case 'CHANGE_VALUE':
+    case 'TASKS_UPDATE_NEW_TASK':
       return {
         ...state,
         [key]: value,

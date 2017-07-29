@@ -3,6 +3,8 @@ import MenuItem from 'material-ui/MenuItem'
 import Menu from 'material-ui/Menu'
 import axios from 'axios'
 import { browserHistory } from 'react-router'
+import PropTypes from 'prop-types'
+
 import logo from './logo.svg'
 import './App.css'
 
@@ -66,4 +68,8 @@ export default class App extends Component {
       </div>
     )
   }
+}
+
+App.propTypes = {
+  children: PropTypes.element.isRequired,
 }
