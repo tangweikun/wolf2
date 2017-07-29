@@ -15,7 +15,7 @@ export default class Property extends React.Component {
 
   componentDidMount() {
     axios
-      .get('findProperty', {})
+      .get('property', {})
       .then(response =>
         this.setState({
           properties: response.data.map(({ date, income, outlay }) => ({

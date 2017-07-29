@@ -33,7 +33,7 @@ export default class DialogProperty extends React.Component {
     this.handleClose()
     const { date, income, outlay } = this.state
     axios
-      .post('insertProperty', {
+      .post('property', {
         date,
         income,
         outlay,

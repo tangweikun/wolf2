@@ -14,7 +14,7 @@ export default class App extends Component {
   componentWillMount() {
     // TODO should remove
     axios
-      .get('findProperty', {})
+      .get('property', {})
       .then((response) => {
         console.log(response)
       })

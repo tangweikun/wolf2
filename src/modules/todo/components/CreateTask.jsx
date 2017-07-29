@@ -6,12 +6,12 @@ export default class CreateTask extends React.Component {
   handleInsertTask = () => {
     const { newTask, changeValue } = this.props
     axios
-      .post('insertTask', {
+      .post('task', {
         task: newTask,
       })
       .then((response) => {
         console.log(response)
-        changeValue('newTask', null)
+        changeValue('newTask', '')
       })
       .catch((error) => {
         console.log(error)
