@@ -18,7 +18,7 @@ export default class TodoList extends React.Component {
       <div
         style={{
           width: '500px',
-          backgroundColor: 'gray',
+          backgroundColor: '#fff',
           margin: '0 auto',
           border: '1px solid gray',
         }}

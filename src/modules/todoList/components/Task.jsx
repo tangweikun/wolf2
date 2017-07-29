@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Checkbox from 'material-ui/Checkbox'
 
 export default function Task({ text }) {
   return (
     <ContainerDiv>
-      {text}
+      <Checkbox label={text} style={{ width: '75%' }} />
     </ContainerDiv>
   )
 }
@@ -17,7 +18,6 @@ Task.propTypes = {
 const ContainerDiv = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f8f8ff;
   border-top: 1px dotted #d3d3d3;
   padding: 10px;
 `
