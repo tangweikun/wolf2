@@ -13,7 +13,9 @@ export default class App extends Component {
           value={inputValue}
           onChange={({ target }) => changeValue('inputValue', target.value)}
         />
-        <p>{inputValue}</p>
+        <p>
+          {inputValue}
+        </p>
       </div>
     )
   }
