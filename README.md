@@ -1,7 +1,7 @@
 # wolf
 
 ## Demo
-http://test.tangweikun.cn:3000
+http://test.tangweikun.cn:3600
 
 ## Getting Started
 

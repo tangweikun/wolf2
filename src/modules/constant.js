@@ -52,5 +52,5 @@ export const PERSONAL_HOMEPAGE = {
   SourceOfFrontEnd: 'https://github.com/tangweikun/wolf',
   SourceOfBackEnd: 'https://github.com/tangweikun/ghost',
   Jenkins: 'test.tangweikun.cn:8080',
-  HomePage: 'test.tangweikun.cn',
+  HomePage: 'test.tangweikun.cn:3600',
 }
