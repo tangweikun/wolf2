@@ -27,6 +27,22 @@ export default class Task extends React.Component {
             this.setState({ isCompleted: !isCompleted })
           }}
         />
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            axios
+              .post('delete', { _id })
+              .then(() => {
+                axios
+                  .get('tasks', {})
+                  .then(response => this.props.getTasks(response.data))
+                  .catch(error => console.log(error))
+              })
+              .catch(error => console.log(error))
+          }}
+        >
+          X
+        </div>
       </ContainerDiv>
     )
   }
@@ -34,11 +50,13 @@ export default class Task extends React.Component {
 
 Task.propTypes = {
   item: PropTypes.object.isRequired,
+  getTasks: PropTypes.func.isRequired,
   isCompleted: PropTypes.bool.isRequired,
 }
 
 const ContainerDiv = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-top: 1px dotted #d3d3d3;
   padding: 10px;
