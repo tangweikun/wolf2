@@ -72,7 +72,7 @@ export default function AboutMe() {
                   fontWeight: 'bold',
                 }}
               >
-                <span>
+                <span style={{ marginRight: '10px' }}>
                   {name}
                 </span>
                 <span>
