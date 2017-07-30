@@ -20,7 +20,7 @@ export default class Task extends React.Component {
       <ContainerDiv>
         <Checkbox
           label={task}
-          style={{ width: '75%' }}
+          style={{ width: '90%' }}
           checked={isCompleted}
           onCheck={() => {
             axios.post('task/update', { _id, isCompleted: !isCompleted })

@@ -13,23 +13,13 @@ export default class App extends Component {
     super(props)
     this.state = { title: 'Keep Learning' }
   }
-  componentWillMount() {
-    // TODO should remove
-    axios
-      .get('property', {})
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
 
   render() {
     const sidebarList = [
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
-      { name: '资产', path: '/property' },
+      { name: 'Charts', path: '/property' },
+      { name: 'About Me', path: '/about' },
     ]
 
     return (
@@ -44,6 +34,7 @@ export default class App extends Component {
             {sidebarList.map(({ name, path }) =>
               (<MenuItem
                 key={name}
+                style={{ color: '#fff' }}
                 onTouchTap={() => {
                   browserHistory.push(path)
                   this.setState({ title: name })
