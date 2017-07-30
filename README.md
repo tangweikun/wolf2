@@ -1,5 +1,8 @@
 # wolf
 
+## Demo
+http://test.tangweikun.cn:3000
+
 ## Getting Started
 
 ```bash
