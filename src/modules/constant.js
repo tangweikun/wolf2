@@ -1,5 +1,6 @@
 export const PROFESSIONAL_SKILL = [
   '具备良好的英语基础，习惯阅读英文文档以及适应使用英语沟通',
+  '已有一年多的敏捷开发经验',
   '熟练使用React+Redux',
   '熟悉Docker、Jenkins、DaoCloud、Rancher等部署构建工具',
   '熟悉JavaScript(ES6)、HTML和CSS',
