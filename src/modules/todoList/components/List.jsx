@@ -24,7 +24,7 @@ export default class TodoList extends React.Component {
         }}
       >
         <CreateTask />
-        {this.props.tasks.map(item => <Task text={item.task} />)}
+        {this.props.tasks.map(item => <Task text={item.task} key={item._id} />)}
       </div>
     )
   }

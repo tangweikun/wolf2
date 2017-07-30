@@ -1,5 +1,6 @@
 const initialState = {
   tasks: [],
+  newTask: '',
 }
 
 export default (state = initialState, action) => {
