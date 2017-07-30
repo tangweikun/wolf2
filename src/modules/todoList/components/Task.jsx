@@ -31,7 +31,7 @@ export default class Task extends React.Component {
           style={{ cursor: 'pointer' }}
           onClick={() => {
             axios
-              .post('delete', { _id })
+              .post('task/delete', { _id })
               .then(() => {
                 axios
                   .get('tasks', {})
