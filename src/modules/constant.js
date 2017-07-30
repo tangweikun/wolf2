@@ -43,3 +43,13 @@ export const PROJECT_EXPERIENCE = [
     describe: '替代爱健康医生端1.0',
   },
 ]
+
+export const PERSONAL_HOMEPAGE = {
+  Github: 'https://github.com/tangweikun',
+  Email: 'tangweikun123@gmail.com',
+  Tel: '18210112205',
+  SourceOfFrontEnd: 'https://github.com/tangweikun/wolf',
+  SourceOfBackEnd: 'https://github.com/tangweikun/ghost',
+  Jenkins: 'test.tangweikun.cn:8080',
+  HomePage: 'test.tangweikun.cn',
+}

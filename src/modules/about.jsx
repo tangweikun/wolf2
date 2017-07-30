@@ -5,25 +5,47 @@ import {
   PROFESSIONAL_SKILL,
   WORK_EXPERIENCE,
   PROJECT_EXPERIENCE,
+  PERSONAL_HOMEPAGE,
 } from './constant'
 
 export default function AboutMe() {
   return (
     <div style={{ padding: '30px' }}>
-      <div>
+      <ContainerDiv>
+        <TitleDiv>个人主页</TitleDiv>
+        <div>
+          {Object.entries(PERSONAL_HOMEPAGE).map(([key, value]) =>
+            (<div style={{ marginBottom: '5px' }} key={Math.random()}>
+              <span style={{ width: '50px' }}>
+                {`${key}: `}
+              </span>
+              <a
+                href={value}
+                target="_blank"
+                style={{ textDecoration: 'none' }}
+              >
+                {value}
+              </a>
+            </div>),
+          )}
+        </div>
+      </ContainerDiv>
+
+      <ContainerDiv>
         <TitleDiv>专业技能</TitleDiv>
-        <ul>
+        <ul style={{ margin: 0 }}>
           {PROFESSIONAL_SKILL.map(item =>
-            (<li>
+            (<li key={Math.random()}>
               {item}
             </li>),
           )}
         </ul>
-      </div>
-      <div>
+      </ContainerDiv>
+
+      <ContainerDiv>
         <TitleDiv>工作经历</TitleDiv>
         {WORK_EXPERIENCE.map(({ timeQuantum, company, describe }) =>
-          (<div>
+          (<div key={Math.random()}>
             <div>
               <span>
                 {timeQuantum}
@@ -37,13 +59,19 @@ export default function AboutMe() {
             </div>
           </div>),
         )}
-      </div>
-      <div>
+      </ContainerDiv>
+
+      <ContainerDiv>
         <TitleDiv>项目经历</TitleDiv>
         {PROJECT_EXPERIENCE.map(
           ({ timeQuantum, name, technologyStack, responsibleFor, describe }) =>
-            (<div>
-              <div style={{ fontSize: '18px', fontWeight: 'bold' }}>
+            (<div key={Math.random()}>
+              <div
+                style={{
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                }}
+              >
                 <span>
                   {name}
                 </span>
@@ -51,20 +79,30 @@ export default function AboutMe() {
                   {timeQuantum}
                 </span>
               </div>
-              <div>
-                {describe}
-              </div>
-              <div>
-                {responsibleFor}
-              </div>
-              <div>
-                {technologyStack}
+              <div style={{ marginBottom: '10px', marginTop: '5px' }}>
+                <div>
+                  <b>项目描述: </b>
+                  {describe}
+                </div>
+                <div>
+                  <b>负责内容: </b>
+                  {responsibleFor}
+                </div>
+                <div>
+                  <b>技术栈: </b>
+                  {technologyStack}
+                </div>
               </div>
             </div>),
         )}
-      </div>
+      </ContainerDiv>
     </div>
   )
 }
 
-const TitleDiv = styled.div`font-size: 22px;`
+const TitleDiv = styled.div`
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`
+const ContainerDiv = styled.div`margin-bottom: 20px;`

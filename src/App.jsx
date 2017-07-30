@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import MenuItem from 'material-ui/MenuItem'
 import Menu from 'material-ui/Menu'
-import axios from 'axios'
 import { browserHistory } from 'react-router'
 import PropTypes from 'prop-types'
 
@@ -16,10 +15,10 @@ export default class App extends Component {
 
   render() {
     const sidebarList = [
+      { name: 'About Me', path: '/about' },
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: 'Charts', path: '/property' },
-      { name: 'About Me', path: '/about' },
     ]
 
     return (
