@@ -6,10 +6,17 @@ export default class CreateTask extends React.Component {
   handleInsertTask = () => {
     const { newTask, updateNewTask } = this.props
 
+    // TODO
     if (newTask) {
       axios
         .post('task', { task: newTask })
-        .then(() => updateNewTask('newTask', ''))
+        .then(() => {
+          updateNewTask('newTask', '')
+          axios
+            .get('tasks', {})
+            .then(response => this.props.getTasks(response.data))
+            .catch(error => console.log(error))
+        })
         .catch(error => console.log(error))
     }
   }
@@ -31,5 +38,6 @@ export default class CreateTask extends React.Component {
 
 CreateTask.propTypes = {
   updateNewTask: PropTypes.func.isRequired,
+  getTasks: PropTypes.func.isRequired,
   newTask: PropTypes.string.isRequired,
 }
