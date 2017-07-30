@@ -14,6 +14,9 @@ export default class TodoList extends React.Component {
   }
 
   render() {
+    // if (this.props.tasks[0]) {
+    //   axios.post('task/update', { _id: this.props.tasks[0]._id })
+    // }
     return (
       <div
         style={{
@@ -24,7 +27,14 @@ export default class TodoList extends React.Component {
         }}
       >
         <CreateTask />
-        {this.props.tasks.map(item => <Task text={item.task} key={item._id} />)}
+        {this.props.tasks.map(item =>
+          (<Task
+            text={item.task}
+            key={item._id}
+            id={item._id}
+            isCompleted={item.isCompleted}
+          />),
+        )}
       </div>
     )
   }
