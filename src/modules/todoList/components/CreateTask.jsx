@@ -30,6 +30,7 @@ export default class CreateTask extends React.Component {
           value={newTask}
           onChange={e => updateNewTask('newTask', e.target.value)}
           onBlur={this.handleInsertTask}
+          onKeyDown={e => e.which === 13 && this.handleInsertTask()}
         />
       </div>
     )
