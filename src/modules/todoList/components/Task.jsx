@@ -8,21 +8,22 @@ export default class Task extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isCompleted: this.props.isCompleted,
+      isCompleted: this.props.item.isCompleted,
     }
   }
 
   render() {
-    const { text, id } = this.props
+    const { item } = this.props
+    const { task, _id } = item
     const { isCompleted } = this.state
     return (
       <ContainerDiv>
         <Checkbox
-          label={text}
+          label={task}
           style={{ width: '75%' }}
           checked={isCompleted}
           onCheck={() => {
-            axios.post('task/update', { id, isCompleted: !isCompleted })
+            axios.post('task/update', { _id, isCompleted: !isCompleted })
             this.setState({ isCompleted: !isCompleted })
           }}
         />
@@ -32,7 +33,7 @@ export default class Task extends React.Component {
 }
 
 Task.propTypes = {
-  text: PropTypes.string.isRequired,
+  item: PropTypes.object.isRequired,
   isCompleted: PropTypes.bool.isRequired,
 }
 
