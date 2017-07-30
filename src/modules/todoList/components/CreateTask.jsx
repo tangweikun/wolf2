@@ -12,17 +12,18 @@ const socket = io('127.0.0.1:4000', {
 export default class CreateTask extends React.Component {
   handleInsertTask = () => {
     const { newTask, updateNewTask } = this.props
-    console.log('----->')
     socket.emit('chat message', newTask)
-    socket.emit('he', '---->>>')
-    console.log('=====')
-    socket.on('ww', m => console.log(m, '0909'))
-    socket.on('chat message', msg => console.log(msg, 'pppp'))
 
     if (newTask) {
       axios
         .post('task', { task: newTask })
-        .then(() => updateNewTask('newTask', ''))
+        .then(() => {
+          updateNewTask('newTask', '')
+          socket.on('chat message', (tasks) => {
+            console.log(tasks, '----9999')
+            this.props.getTasks(tasks)
+          })
+        })
         .catch(error => console.log(error))
     }
   }
