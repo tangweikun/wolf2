@@ -24,10 +24,19 @@ export default class CreateTask extends React.Component {
   render() {
     const { updateNewTask, newTask } = this.props
     return (
-      <div style={{ width: '100%', height: '30px' }}>
+      <div style={{ width: '100%', height: '40px' }}>
         <input
-          style={{ width: '100%', height: '30px', border: 0, padding: 0 }}
+          style={{
+            width: '96%',
+            height: '40px',
+            border: 0,
+            padding: 0,
+            paddingLeft: '2%',
+            paddingRight: '2%',
+            fontSize: '16px',
+          }}
           value={newTask}
+          placeholder="New Todo"
           onChange={e => updateNewTask('newTask', e.target.value)}
           onBlur={this.handleInsertTask}
           onKeyDown={e => e.which === 13 && this.handleInsertTask()}
