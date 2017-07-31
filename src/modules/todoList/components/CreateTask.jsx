@@ -27,21 +27,21 @@ export default class CreateTask extends React.Component {
       <div
         style={{
           width: '100%',
-          height: '40px',
+          height: '50px',
         }}
       >
         <input
           style={{
             width: '96%',
-            height: '40px',
+            height: '50px',
             border: 0,
             padding: 0,
             paddingLeft: '2%',
             paddingRight: '2%',
-            fontSize: '16px',
+            fontSize: '18px',
           }}
           value={newTask}
-          placeholder="New Todo"
+          placeholder="Please leave your advice on this site"
           onChange={e => updateNewTask('newTask', e.target.value)}
           onBlur={this.handleInsertTask}
           onKeyDown={e => e.which === 13 && this.handleInsertTask()}
