@@ -39,7 +39,7 @@ export default class TodoList extends React.Component {
               style={{ marginLeft: '1px' }}
               label={option}
               backgroundColor={
-                select === option ? 'rgb(0, 188, 212)' : '#C0C0C0'
+                select === option ? 'rgb(0, 188, 212)' : 'rgba(0, 0, 0, .75)'
               }
               labelColor="#fff"
               onTouchTap={() => this.setState({ select: option })}
