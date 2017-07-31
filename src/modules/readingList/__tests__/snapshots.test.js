@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import App from '../components/index.jsx'
+import App from '../components'
 
 describe('++ Snapshot for Test', () => {
   it('should render TableRow', () => {
