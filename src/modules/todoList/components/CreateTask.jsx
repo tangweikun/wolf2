@@ -24,7 +24,12 @@ export default class CreateTask extends React.Component {
   render() {
     const { updateNewTask, newTask } = this.props
     return (
-      <div style={{ width: '100%', height: '40px' }}>
+      <div
+        style={{
+          width: '100%',
+          height: '40px',
+        }}
+      >
         <input
           style={{
             width: '96%',
