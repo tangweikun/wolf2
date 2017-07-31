@@ -12,6 +12,7 @@
     "semi": ["error", "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "import/extensions": ["error", "never"],
     "no-console": 0
   }
 }
