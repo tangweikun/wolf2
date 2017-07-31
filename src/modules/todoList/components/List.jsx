@@ -22,7 +22,13 @@ export default class TodoList extends React.Component {
 
   render() {
     const { select } = this.state
+    const { tasks } = this.props
     const OPTIONS = ['TODO', 'DONE', 'DELETED']
+    const filterdTasks = tasks.filter(({ isCompleted, isDeleted }) => {
+      if (select === 'TODO') return !isDeleted && !isCompleted
+      if (select === 'DONE') return !isDeleted && isCompleted
+      return isDeleted
+    })
     return (
       <ContainerDiv>
         <SelectDiv>
@@ -41,7 +47,7 @@ export default class TodoList extends React.Component {
         </SelectDiv>
         <div style={{ border: '1px dotted #d3d3d3' }}>
           <CreateTask />
-          {this.props.tasks.map(item =>
+          {filterdTasks.map(item =>
             <Task item={item} key={item._id} getTasks={this.props.getTasks} />,
           )}
         </div>
