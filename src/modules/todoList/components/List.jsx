@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import RaisedButton from 'material-ui/RaisedButton'
+import styled from 'styled-components'
 
 import CreateTask from '../containers/CreateTask'
 import Task from './Task'
@@ -21,49 +22,44 @@ export default class TodoList extends React.Component {
 
   render() {
     const { select } = this.state
+    const OPTIONS = ['TODO', 'DONE', 'DELETED']
     return (
-      <div
-        style={{
-          width: '500px',
-          backgroundColor: '#fff',
-          margin: '0 auto',
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <RaisedButton
-            style={{ marginLeft: '1px' }}
-            label="TODO"
-            backgroundColor={select === 'TODO' ? 'rgb(0, 188, 212)' : '#C0C0C0'}
-            labelColor="#fff"
-            onTouchTap={() => this.setState({ select: 'TODO' })}
-          />
-          <RaisedButton
-            style={{ marginLeft: '1px' }}
-            label="DONE"
-            backgroundColor={select === 'DONE' ? 'rgb(0, 188, 212)' : '#C0C0C0'}
-            labelColor="#fff"
-            onTouchTap={() => this.setState({ select: 'DONE' })}
-          />
-          <RaisedButton
-            style={{ marginLeft: '1px' }}
-            label="DELETED"
-            backgroundColor={
-              select === 'DELETED' ? 'rgb(0, 188, 212)' : '#C0C0C0'
-            }
-            labelColor="#fff"
-            onTouchTap={() => this.setState({ select: 'DELETED' })}
-          />
-        </div>
+      <ContainerDiv>
+        <SelectDiv>
+          {OPTIONS.map(option =>
+            (<RaisedButton
+              key={Math.random()}
+              style={{ marginLeft: '1px' }}
+              label={option}
+              backgroundColor={
+                select === option ? 'rgb(0, 188, 212)' : '#C0C0C0'
+              }
+              labelColor="#fff"
+              onTouchTap={() => this.setState({ select: option })}
+            />),
+          )}
+        </SelectDiv>
         <div style={{ border: '1px dotted #d3d3d3' }}>
           <CreateTask />
           {this.props.tasks.map(item =>
             <Task item={item} key={item._id} getTasks={this.props.getTasks} />,
           )}
         </div>
-      </div>
+      </ContainerDiv>
     )
   }
 }
+
+const ContainerDiv = styled.div`
+  width: 500px;
+  background-color: #fff;
+  margin: 0 auto';
+`
+
+const SelectDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
 
 TodoList.propTypes = {
   getTasks: PropTypes.func.isRequired,
