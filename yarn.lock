@@ -5434,6 +5434,12 @@ promise@7.1.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@15.5.8:
+  version "15.5.8"
+  resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+  dependencies:
+    fbjs "^0.8.9"
+
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@~15.5.10:
   version "15.5.10"
   resolved "http://r.cnpmjs.org/prop-types/download/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
@@ -5598,6 +5604,18 @@ react-event-listener@^0.4.5:
     fbjs "^0.8.4"
     prop-types "^15.5.4"
     warning "^3.0.0"
+
+react-icon-base@2.0.7:
+  version "2.0.7"
+  resolved "https://registry.npmjs.org/react-icon-base/-/react-icon-base-2.0.7.tgz#0bd18736bd6ce79ca6d69ce8387a07fb8d4ceffe"
+  dependencies:
+    prop-types "15.5.8"
+
+react-icons@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.npmjs.org/react-icons/-/react-icons-2.2.5.tgz#f942501c21a4cc0456ce2bbee5032c93f6051dcf"
+  dependencies:
+    react-icon-base "2.0.7"
 
 react-redux@^5.0.5:
   version "5.0.5"
@@ -5795,9 +5813,9 @@ recharts-scale@0.3.1:
   version "0.3.1"
   resolved "http://r.cnpmjs.org/recharts-scale/download/recharts-scale-0.3.1.tgz#635f14c998b151d63f2e8fff1fcbe46faf0423a6"
 
-recharts@^1.0.0-alpha.1:
+recharts@^1.0.0-alpha.2:
   version "1.0.0-alpha.2"
-  resolved "http://r.cnpmjs.org/recharts/download/recharts-1.0.0-alpha.2.tgz#fc99fefc4c6fee150f1c1f516145ac1e77f2e3e7"
+  resolved "https://registry.npmjs.org/recharts/-/recharts-1.0.0-alpha.2.tgz#fc99fefc4c6fee150f1c1f516145ac1e77f2e3e7"
   dependencies:
     classnames "2.2.5"
     core-js "2.4.1"

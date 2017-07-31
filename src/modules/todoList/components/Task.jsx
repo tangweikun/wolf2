@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import axios from 'axios'
 import Checkbox from 'material-ui/Checkbox'
+import FaTrashO from 'react-icons/lib/fa/trash-o'
+import FontIcon from 'material-ui/FontIcon'
 
 export default class Task extends React.Component {
   constructor(props) {
@@ -41,7 +43,7 @@ export default class Task extends React.Component {
               .catch(error => console.log(error))
           }}
         >
-          X
+          <FaTrashO color="#C0C0C0" size={20} />
         </div>
       </ContainerDiv>
     )
