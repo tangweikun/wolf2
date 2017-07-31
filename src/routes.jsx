@@ -9,7 +9,7 @@ import AboutMe from './modules/about'
 
 const routes = (
   <Route path="/" component={App}>
-    <IndexRoute component={AboutMe} />
+    <IndexRoute component={TodoList} />
     <Route path="/property" component={Property} />
     <Route path="/todo" component={TodoList} />
     <Route path="/comicon" component={Comicon} />

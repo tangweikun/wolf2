@@ -10,15 +10,15 @@ import './App.css'
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { title: 'Keep Learning' }
+    this.state = { title: 'TodoList' }
   }
 
   render() {
     const sidebarList = [
-      { name: 'About Me', path: '/about' },
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: 'Charts', path: '/property' },
+      { name: 'About Me', path: '/about' },
     ]
 
     return (

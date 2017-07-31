@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import axios from 'axios'
 import Checkbox from 'material-ui/Checkbox'
 import FaTrashO from 'react-icons/lib/fa/trash-o'
-import FontIcon from 'material-ui/FontIcon'
 
 export default class Task extends React.Component {
   constructor(props) {
@@ -16,11 +15,13 @@ export default class Task extends React.Component {
 
   render() {
     const { item } = this.props
-    const { task, _id } = item
+    const { task, _id, isDeleted } = item
     const { isCompleted } = this.state
+
     return (
-      <ContainerDiv>
+      <ContainerDiv isDeleted={isDeleted}>
         <Checkbox
+          disabled={isDeleted}
           label={task}
           style={{ width: '90%' }}
           checked={isCompleted}
@@ -38,21 +39,23 @@ export default class Task extends React.Component {
             this.setState({ isCompleted: !isCompleted })
           }}
         />
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => {
-            axios
-              .post('task/delete', { _id })
-              .then(() => {
+        <div style={{ cursor: 'pointer' }}>
+          {!isDeleted &&
+            <FaTrashO
+              color="#C0C0C0"
+              size={20}
+              onClick={() => {
                 axios
-                  .get('tasks')
-                  .then(response => this.props.getTasks(response.data))
+                  .post('task/delete', { _id })
+                  .then(() => {
+                    axios
+                      .get('tasks')
+                      .then(response => this.props.getTasks(response.data))
+                      .catch(error => console.log(error))
+                  })
                   .catch(error => console.log(error))
-              })
-              .catch(error => console.log(error))
-          }}
-        >
-          <FaTrashO color="#C0C0C0" size={20} />
+              }}
+            />}
         </div>
       </ContainerDiv>
     )
