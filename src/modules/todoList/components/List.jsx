@@ -7,6 +7,11 @@ import CreateTask from '../containers/CreateTask'
 import Task from './Task'
 
 export default class TodoList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { select: 'TODO' }
+  }
+
   componentDidMount() {
     axios
       .get('tasks', {})
@@ -15,6 +20,7 @@ export default class TodoList extends React.Component {
   }
 
   render() {
+    const { select } = this.state
     return (
       <div
         style={{
@@ -27,20 +33,25 @@ export default class TodoList extends React.Component {
           <RaisedButton
             style={{ marginLeft: '1px' }}
             label="TODO"
-            backgroundColor="rgb(0, 188, 212)"
+            backgroundColor={select === 'TODO' ? 'rgb(0, 188, 212)' : '#C0C0C0'}
             labelColor="#fff"
+            onTouchTap={() => this.setState({ select: 'TODO' })}
           />
           <RaisedButton
             style={{ marginLeft: '1px' }}
             label="DONE"
-            backgroundColor="#C0C0C0"
+            backgroundColor={select === 'DONE' ? 'rgb(0, 188, 212)' : '#C0C0C0'}
             labelColor="#fff"
+            onTouchTap={() => this.setState({ select: 'DONE' })}
           />
           <RaisedButton
             style={{ marginLeft: '1px' }}
             label="DELETED"
-            backgroundColor="#C0C0C0"
+            backgroundColor={
+              select === 'DELETED' ? 'rgb(0, 188, 212)' : '#C0C0C0'
+            }
             labelColor="#fff"
+            onTouchTap={() => this.setState({ select: 'DELETED' })}
           />
         </div>
         <div style={{ border: '1px dotted #d3d3d3' }}>
