@@ -25,7 +25,16 @@ export default class Task extends React.Component {
           style={{ width: '90%' }}
           checked={isCompleted}
           onCheck={() => {
-            axios.post('task/update', { _id, isCompleted: !isCompleted })
+            axios
+              .post('task/update', { _id, isCompleted: !isCompleted })
+              .then(() => {
+                axios
+                  .get('tasks')
+                  .then(response => this.props.getTasks(response.data))
+                  .catch(error => console.log(error))
+              })
+              .catch(error => console.log(error))
+
             this.setState({ isCompleted: !isCompleted })
           }}
         />
@@ -36,7 +45,7 @@ export default class Task extends React.Component {
               .post('task/delete', { _id })
               .then(() => {
                 axios
-                  .get('tasks', {})
+                  .get('tasks')
                   .then(response => this.props.getTasks(response.data))
                   .catch(error => console.log(error))
               })

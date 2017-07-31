@@ -29,6 +29,7 @@ export default class TodoList extends React.Component {
       if (select === 'DONE') return !isDeleted && isCompleted
       return isDeleted
     })
+
     return (
       <ContainerDiv>
         <SelectDiv>
