@@ -11,9 +11,25 @@ yarn start
 open http://localhost:3000
 ```
 
-## Intention
+## Developing
 
-1. play with React
+### Built With
+
+### Prerequisites
+
+### Deploying
+
+### Versioning
+
+### Tests
+
+## Style guide
+
+## API Reference
+
+## Database
+
+## Licensing
 
 ## Help
 https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md
