@@ -24,11 +24,7 @@ export default class App extends Component {
       <div className="App">
         <div className="App-sidebar">
           <div className="App-sidebar-title">KeepLearning</div>
-          <Menu
-            onItemTouchTap={() => {
-              console.log(454)
-            }}
-          >
+          <Menu>
             {sidebarList.map(({ name, path }) =>
               (<MenuItem
                 key={name}

@@ -34,7 +34,7 @@ export default class Property extends React.Component {
 
   render() {
     if (!this.state.properties) return null
-    console.log(this.state.properties)
+
     return (
       <Tabs>
         <Tab label="资产列表">
