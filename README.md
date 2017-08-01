@@ -19,12 +19,19 @@ Here you should say what actually happens when you execute the code above.
 
 ### Built With
 > react 15.5.4
+
 > material-ui 0.18.1
+
 > jest 19.0.2
+
 > axios 0.16.2
+
 > redux 3.6.0
+
 > styled-components 2.1.0
+
 > react-router 2.4.1
+
 > react-router-redux 4.0.5
 
 ### Prerequisites
