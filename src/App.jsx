@@ -18,7 +18,6 @@ export default class App extends Component {
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: 'Charts', path: '/property' },
-      { name: 'About Me', path: '/about' },
     ]
 
     return (
