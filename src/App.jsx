@@ -32,7 +32,7 @@ export default class App extends Component {
             {sidebarList.map(({ name, path }) =>
               (<MenuItem
                 key={name}
-                style={{ color: '#fff' }}
+                style={{ color: '#fff', width: '200px' }}
                 onTouchTap={() => {
                   browserHistory.push(path)
                   this.setState({ title: name })
