@@ -33,19 +33,20 @@ export default class Property extends React.Component {
   }
 
   render() {
-    if (!this.state.properties) return null
+    const { properties } = this.state
+    if (!properties) return null
 
     return (
       <Tabs>
         <Tab label="资产列表">
-          <PropertyList properties={this.state.properties} />
+          <PropertyList properties={properties} />
         </Tab>
         {Object.entries(CATEGORY).map(([key, { text, color }]) =>
           (<Tab label={text} key={key}>
             <PropertyLineChart
               color={color}
               dataKey={key}
-              properties={this.state.properties}
+              properties={properties}
             />
           </Tab>),
         )}
