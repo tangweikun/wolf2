@@ -10,6 +10,7 @@
     "history": "^4.6.1",
     "http-server": "^0.10.0",
     "jest": "^19.0.2",
+    "jsonwebtoken": "^7.4.2",
     "lodash": "^4.17.4",
     "material-ui": "^0.18.1",
     "moment": "^2.18.1",
