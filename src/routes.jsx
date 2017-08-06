@@ -10,13 +10,13 @@ import Login from './modules/Login'
 
 const routes = (
   <Route path="/" component={App}>
-    <IndexRoute component={TodoList} />
+    <IndexRoute component={Login} />
     <Route path="/property" component={Property} />
     <Route path="/todo" component={TodoList} />
     <Route path="/comicon" component={Comicon} />
     <Route path="/about" component={AboutMe} />
     <Route path="/login" component={Login} />
   </Route>
-);
+)
 
 export default routes

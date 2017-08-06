@@ -5,6 +5,7 @@ class Login extends Component {
   render() {
     const auth = new Auth();
     const { isAuthenticated } = auth;
+    console.log('------>>>>', isAuthenticated())
     return (
       <div className="container">
         {isAuthenticated() && <h4>You are logged in!</h4>}
