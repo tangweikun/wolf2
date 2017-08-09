@@ -18,6 +18,7 @@ export default class App extends Component {
       { name: 'TodoList', path: '/todo' },
       { name: 'CSS漫展', path: '/comicon' },
       { name: 'Charts', path: '/property' },
+      { name: 'TaskList', path: '/taskList' },
     ]
 
     return (
@@ -26,7 +27,7 @@ export default class App extends Component {
           <div className="App-sidebar-title">KeepLearning</div>
           <Menu>
             {sidebarList.map(({ name, path }) =>
-              (<MenuItem
+              <MenuItem
                 key={name}
                 style={{ color: '#fff', width: '200px' }}
                 onTouchTap={() => {
@@ -35,7 +36,7 @@ export default class App extends Component {
                 }}
               >
                 {name}
-              </MenuItem>),
+              </MenuItem>,
             )}
           </Menu>
         </div>
