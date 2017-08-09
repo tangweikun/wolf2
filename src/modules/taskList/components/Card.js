@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Card() {
+export default function Card({ text }) {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ export default function Card() {
         paddingTop: '5px',
       }}
     >
-      hhhh
+      {text}
     </div>
   )
 }
