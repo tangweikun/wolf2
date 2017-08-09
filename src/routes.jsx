@@ -6,7 +6,7 @@ import TodoList from './modules/todoList/components'
 import App from './App'
 import Comicon from './modules/comicon'
 import AboutMe from './modules/about'
-import TaskList from './modules/taskList/components'
+import TaskList from './modules/taskList/containers'
 
 const routes = (
   <Route path="/" component={App}>
