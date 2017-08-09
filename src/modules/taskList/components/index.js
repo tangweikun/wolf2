@@ -1,11 +1,11 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import FaPlus from 'react-icons/lib/fa/plus'
-import Card from './Card'
+import List from './List'
 
 export default class TaskList extends React.Component {
   render() {
-    const { addTask, tasks } = this.props
+    const { addTask, list } = this.props
 
     return (
       <div
@@ -17,7 +17,7 @@ export default class TaskList extends React.Component {
           overflowX: 'auto',
         }}
       >
-        {tasks.map(item => <Card />)}
+        {list.map(item => <List />)}
         <div
           onClick={() => addTask()}
           style={{

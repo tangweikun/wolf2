@@ -1,5 +1,5 @@
 const initialState = {
-  tasks: [],
+  list: [],
 }
 
 export default (state = initialState, action) => {
@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case 'TASKLIST_ADD':
       return {
         ...state,
-        tasks: [...state.tasks, {}],
+        list: [...state.list, {}],
       }
 
     default:

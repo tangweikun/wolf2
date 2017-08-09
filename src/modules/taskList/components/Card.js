@@ -4,14 +4,15 @@ export default function Card() {
   return (
     <div
       style={{
-        display: 'inline-block',
-        border: '1px solid gray',
-        backgroundColor: 'yellow',
-        minWidth: '250px',
-        marginRight: '20px',
+        backgroundColor: 'pink',
+        width: '100%',
+        fontSize: '18px',
+        marginTop: '5px',
+        paddingBottom: '5px',
+        paddingTop: '5px',
       }}
     >
-      777
+      hhhh
     </div>
   )
 }
