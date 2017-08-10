@@ -26,7 +26,7 @@ export default class List extends React.Component {
       <div
         style={{
           display: 'inline-block',
-          border: '1px solid gray',
+          border: '1px solid rgba(0, 0, 0, .23)',
           backgroundColor: '#d8e0f3',
           minWidth: '250px',
           height: '400px',
@@ -40,10 +40,15 @@ export default class List extends React.Component {
             lineHeight: '40px',
             paddingLeft: '5px',
             paddingRight: '5px',
-            borderBottom: '1px solid gray',
+            borderBottom: '1px solid rgba(0, 0, 0, .23)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
-          {subtitle}
+          <div>
+            {subtitle}
+          </div>
           {!showCreateCard &&
             <FaPlus
               onClick={() =>

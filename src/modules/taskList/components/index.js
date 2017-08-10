@@ -18,7 +18,6 @@ export default class TaskList extends React.Component {
         style={{
           padding: '50px',
           display: 'flex',
-          border: '1px solid red',
           whiteSpace: 'nowrap',
           overflowX: 'auto',
         }}
@@ -29,7 +28,7 @@ export default class TaskList extends React.Component {
         {shouldShowAddNewList
           ? <div
               style={{
-                border: '1px dotted gray',
+                border: '1px dotted rgba(0, 0, 0, .23)',
                 backgroundColor: '#d8e0f3',
                 minWidth: '250px',
                 height: '95px',

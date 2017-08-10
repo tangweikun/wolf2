@@ -14,6 +14,7 @@ export default function Card({ text }) {
         paddingLeft: '5px',
         paddingRight: '5px',
         borderRadius: '2px',
+        border: '1px solid rgba(0, 0, 0, .23)',
       }}
     >
       {text}
