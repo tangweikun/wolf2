@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import RaisedButton from 'material-ui/RaisedButton'
+import styled from 'styled-components'
 
 export default class CreateTask extends React.Component {
   constructor(props) {
@@ -20,23 +21,8 @@ export default class CreateTask extends React.Component {
     const { text } = this.state
 
     return (
-      <div
-        style={{
-          marginLeft: '5px',
-          marginRight: '5px',
-          marginTop: '5px',
-        }}
-      >
-        <textarea
-          style={{
-            display: 'block',
-            width: '100%',
-            height: '50px',
-            border: 0,
-            padding: 0,
-            fontSize: '18px',
-            marginBottom: '5px',
-          }}
+      <div style={{ marginLeft: '5px', marginRight: '5px', marginTop: '5px' }}>
+        <CardTextarea
           value={text}
           placeholder="Enter a note"
           onChange={e => this.setState({ text: e.target.value })}
@@ -56,3 +42,13 @@ export default class CreateTask extends React.Component {
 CreateTask.propTypes = {
   saveNewCard: PropTypes.func.isRequired,
 }
+
+const CardTextarea = styled.textarea`
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  padding: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+`
