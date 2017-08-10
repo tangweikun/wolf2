@@ -29,9 +29,19 @@ export default class TaskList extends React.Component {
         {shouldShowAddNewList
           ? <div
               style={{
-                width: '250px',
-                height: '100px',
+                border: '1px dotted gray',
+                backgroundColor: '#d8e0f3',
+                minWidth: '250px',
+                height: '95px',
+                marginRight: '20px',
+                textAlign: 'center',
+                flexWrap: 'nowrap',
+                overflowX: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
                 borderRadius: '8px',
+                padding: '5px',
               }}
             >
               <input
@@ -41,8 +51,6 @@ export default class TaskList extends React.Component {
                   height: '50px',
                   border: 0,
                   padding: 0,
-                  paddingLeft: '2%',
-                  paddingRight: '2%',
                   fontSize: '18px',
                 }}
                 value={text}
@@ -50,6 +58,7 @@ export default class TaskList extends React.Component {
                 onChange={e => this.setState({ text: e.target.value })}
               />
               <RaisedButton
+                primary
                 label="ADD"
                 style={{ display: 'block' }}
                 onTouchTap={() => {
@@ -65,7 +74,7 @@ export default class TaskList extends React.Component {
                 })}
               style={{
                 border: '1px dotted gray',
-                backgroundColor: 'yellow',
+                backgroundColor: '#d8e0f3',
                 minWidth: '250px',
                 height: '100px',
                 lineHeight: '100px',
