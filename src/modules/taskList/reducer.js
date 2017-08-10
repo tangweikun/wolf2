@@ -12,12 +12,12 @@ export default (state = initialState, action) => {
     case 'TASKLIST_CARD_ADD':
       return {
         ...state,
-        list: state.list.map(({ subTitle, cards }, index) => {
+        list: state.list.map(({ subtitle, cards }, index) => {
           if (index === order) {
-            return { subTitle, cards: [...cards, { text }] }
+            return { subtitle, cards: [...cards, { text }] }
           }
 
-          return { subTitle, cards }
+          return { subtitle, cards }
         }),
       }
 
