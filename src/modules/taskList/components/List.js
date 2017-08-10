@@ -1,5 +1,6 @@
 import React from 'react'
 import FaPlus from 'react-icons/lib/fa/plus'
+import PropTypes from 'prop-types'
 
 import Card from './Card'
 import CreateCard from './CreateCard'
@@ -10,9 +11,16 @@ export default class List extends React.Component {
     this.state = { showCreateCard: false }
   }
 
+  saveNewCard = text => {
+    const { order, addCard } = this.props
+
+    addCard({ order, text })
+    this.setState({ showCreateCard: false })
+  }
+
   render() {
-    const { order, cards, addCard } = this.props
     const { showCreateCard } = this.state
+    const { cards } = this.props
 
     return (
       <div
@@ -37,10 +45,16 @@ export default class List extends React.Component {
                 })}
             />}
         </div>
-        {showCreateCard && <CreateCard addCard={addCard} order={order} />}
+        {showCreateCard && <CreateCard saveNewCard={this.saveNewCard} />}
 
         {cards.map(({ text }) => <Card text={text} />)}
       </div>
     )
   }
+}
+
+List.propTypes = {
+  addCard: PropTypes.func.isRequired,
+  order: PropTypes.number.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
 }

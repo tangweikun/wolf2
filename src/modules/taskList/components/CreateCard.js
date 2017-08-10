@@ -9,33 +9,18 @@ export default class CreateTask extends React.Component {
   }
 
   handleInsertTask = () => {
-    // const { newTask, updateNewTask } = this.props
-    // TODO
-    // if (newTask) {
-    //   axios
-    //     .post('task', { task: newTask })
-    //     .then(() => {
-    //       updateNewTask('newTask', '')
-    //       axios
-    //         .get('tasks', {})
-    //         .then(response => this.props.getTasks(response.data))
-    //         .catch(error => console.log(error))
-    //     })
-    //     .catch(error => console.log(error))
-    // }
+    const { saveNewCard } = this.props
+    const { text } = this.state
+
+    saveNewCard(text)
+    this.setState({ text: '' })
   }
 
   render() {
-    const { addCard, order } = this.props
     const { text } = this.state
 
     return (
-      <div
-        style={{
-          width: '100%',
-          height: '50px',
-        }}
-      >
+      <div style={{ width: '100%', height: '50px' }}>
         <textarea
           style={{
             display: 'block',
@@ -51,13 +36,16 @@ export default class CreateTask extends React.Component {
           placeholder="Please leave your advice on this site"
           onChange={e => this.setState({ text: e.target.value })}
         />
-        <RaisedButton label="ADD" onTouchTap={() => addCard({ order, text })} />
+        <RaisedButton
+          label="ADD"
+          style={{ display: 'block' }}
+          onTouchTap={this.handleInsertTask}
+        />
       </div>
     )
   }
 }
 
 CreateTask.propTypes = {
-  addCard: PropTypes.func.isRequired,
-  order: PropTypes.number.isRequired,
+  saveNewCard: PropTypes.func.isRequired,
 }
