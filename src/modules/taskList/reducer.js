@@ -3,7 +3,7 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-  const { type, order } = action
+  const { type, order, text } = action
 
   switch (type) {
     case 'TASKLIST_ADD':
@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
         ...state,
         list: state.list.map(({ subTitle, cards }, index) => {
           if (index === order) {
-            return { subTitle, cards: [...cards, { text: '999' }] }
+            return { subTitle, cards: [...cards, { text }] }
           }
 
           return { subTitle, cards }

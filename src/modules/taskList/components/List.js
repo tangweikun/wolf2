@@ -2,10 +2,17 @@ import React from 'react'
 import FaPlus from 'react-icons/lib/fa/plus'
 
 import Card from './Card'
+import CreateCard from './CreateCard'
 
 export default class List extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { showCreateCard: false }
+  }
+
   render() {
     const { order, cards, addCard } = this.props
+    const { showCreateCard } = this.state
 
     return (
       <div
@@ -22,11 +29,17 @@ export default class List extends React.Component {
       >
         <div style={{ height: '40px', backgroundColor: 'gray' }}>
           Todo
-          <FaPlus onClick={() => addCard(order)} />
+          {!showCreateCard &&
+            <FaPlus
+              onClick={() =>
+                this.setState({
+                  showCreateCard: true,
+                })}
+            />}
         </div>
+        {showCreateCard && <CreateCard addCard={addCard} order={order} />}
+
         {cards.map(({ text }) => <Card text={text} />)}
-        <Card />
-        <Card />
       </div>
     )
   }
