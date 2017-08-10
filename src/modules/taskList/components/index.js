@@ -27,7 +27,13 @@ export default class TaskList extends React.Component {
           <List order={index} subtitle={subtitle} cards={cards} />,
         )}
         {shouldShowAddNewList
-          ? <div style={{ width: '250px', height: '100px' }}>
+          ? <div
+              style={{
+                width: '250px',
+                height: '100px',
+                borderRadius: '8px',
+              }}
+            >
               <input
                 style={{
                   display: 'block',
@@ -40,7 +46,7 @@ export default class TaskList extends React.Component {
                   fontSize: '18px',
                 }}
                 value={text}
-                placeholder="Please leave your advice on this site"
+                placeholder="Enter a List name"
                 onChange={e => this.setState({ text: e.target.value })}
               />
               <RaisedButton
@@ -53,7 +59,10 @@ export default class TaskList extends React.Component {
               />
             </div>
           : <div
-              onClick={() => this.setState({ shouldShowAddNewList: true })}
+              onClick={() =>
+                this.setState({
+                  shouldShowAddNewList: true,
+                })}
               style={{
                 border: '1px dotted gray',
                 backgroundColor: 'yellow',
@@ -65,6 +74,7 @@ export default class TaskList extends React.Component {
                 textAlign: 'center',
                 flexWrap: 'nowrap',
                 overflowX: 'auto',
+                borderRadius: '8px',
               }}
             >
               <FaPlus />Add a list...

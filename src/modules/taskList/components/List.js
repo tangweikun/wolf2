@@ -27,15 +27,22 @@ export default class List extends React.Component {
         style={{
           display: 'inline-block',
           border: '1px solid gray',
-          backgroundColor: 'yellow',
+          backgroundColor: '#d8e0f3',
           minWidth: '250px',
           height: '400px',
           marginRight: '10px',
-          paddingLeft: '5px',
-          paddingRight: '5px',
+          borderRadius: '8px',
         }}
       >
-        <div style={{ height: '40px', backgroundColor: 'gray' }}>
+        <div
+          style={{
+            height: '40px',
+            lineHeight: '40px',
+            paddingLeft: '5px',
+            paddingRight: '5px',
+            borderBottom: '1px solid gray',
+          }}
+        >
           {subtitle}
           {!showCreateCard &&
             <FaPlus

@@ -20,23 +20,30 @@ export default class CreateTask extends React.Component {
     const { text } = this.state
 
     return (
-      <div style={{ width: '100%', height: '50px' }}>
+      <div
+        style={{
+          marginLeft: '5px',
+          marginRight: '5px',
+          marginTop: '5px',
+        }}
+      >
         <textarea
           style={{
             display: 'block',
-            width: '96%',
+            width: '100%',
             height: '50px',
             border: 0,
             padding: 0,
-            paddingLeft: '2%',
-            paddingRight: '2%',
             fontSize: '18px',
+            marginBottom: '5px',
           }}
           value={text}
-          placeholder="Please leave your advice on this site"
+          placeholder="Enter a note"
           onChange={e => this.setState({ text: e.target.value })}
         />
+
         <RaisedButton
+          primary
           label="ADD"
           style={{ display: 'block' }}
           onTouchTap={this.handleInsertTask}
