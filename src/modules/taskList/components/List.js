@@ -20,7 +20,7 @@ export default class List extends React.Component {
 
   render() {
     const { showCreateCard } = this.state
-    const { cards } = this.props
+    const { cards, subtitle } = this.props
 
     return (
       <div
@@ -36,7 +36,7 @@ export default class List extends React.Component {
         }}
       >
         <div style={{ height: '40px', backgroundColor: 'gray' }}>
-          Todo
+          {subtitle}
           {!showCreateCard &&
             <FaPlus
               onClick={() =>

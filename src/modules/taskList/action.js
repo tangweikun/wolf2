@@ -1,5 +1,6 @@
-export const addTask = () => ({
+export const addTask = text => ({
   type: 'TASKLIST_ADD',
+  text,
 })
 
 export const addCard = ({ order, text }) => ({

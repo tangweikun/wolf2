@@ -7,10 +7,7 @@ export default (state = initialState, action) => {
 
   switch (type) {
     case 'TASKLIST_ADD':
-      return {
-        ...state,
-        list: [...state.list, { subTitle: 'iamsubtitle', cards: [] }],
-      }
+      return { ...state, list: [...state.list, { subtitle: text, cards: [] }] }
 
     case 'TASKLIST_CARD_ADD':
       return {
