@@ -53,6 +53,7 @@ const Container = styled.div`
   border: 1px solid rgba(0, 0, 0, .23);
   background-color: #d8e0f3;
   min-width: 250px;
+  width: 250px;
   height: 400px;
   margin-right: 10px;
   border-radius: 8px;

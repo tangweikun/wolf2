@@ -24,7 +24,7 @@ const CardDiv = styled.div`
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 2px;
+  border-radius: 4px;
   min-height: 30px;
   white-space: normal;
   border: 1px solid rgba(0, 0, 0, .23);
