@@ -51,5 +51,6 @@ const CardTextarea = styled.textarea`
   padding: 5px;
   font-size: 18px;
   margin-bottom: 5px;
+  border-radius: 4px;
   box-sizing: border-box;
 `

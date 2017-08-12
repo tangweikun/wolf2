@@ -30,7 +30,10 @@ export default class List extends React.Component {
             {subtitle}
           </div>
           {!showCreateCard &&
-            <FaPlus onClick={() => this.setState({ showCreateCard: true })} />}
+            <FaPlus
+              onClick={() => this.setState({ showCreateCard: true })}
+              style={{ cursor: 'pointer' }}
+            />}
         </Header>
 
         {showCreateCard && <CreateCard saveNewCard={this.saveNewCard} />}
