@@ -62,6 +62,7 @@ const AddNewListButton = styled.div`
   display: inline-block;
   margin-right: 20px;
   text-align: center;
+  cursor: pointer;
   border-radius: 8px;
 `
 
