@@ -38,7 +38,9 @@ export default class List extends React.Component {
 
         {showCreateCard && <CreateCard saveNewCard={this.saveNewCard} />}
 
-        {cards.map(({ text }) => <Card text={text} />)}
+        {cards.map(({ text }, index) =>
+          <Card key={`${text}_${index}`} text={text} />,
+        )}
       </Container>
     )
   }

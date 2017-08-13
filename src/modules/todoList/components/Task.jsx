@@ -63,9 +63,8 @@ export default class Task extends React.Component {
 }
 
 Task.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.objectOf(PropTypes.any).isRequired,
   getTasks: PropTypes.func.isRequired,
-  isCompleted: PropTypes.bool.isRequired,
 }
 
 const ContainerDiv = styled.div`

@@ -24,7 +24,12 @@ export default class TaskList extends React.Component {
         }}
       >
         {list.map(({ subtitle, cards }, index) =>
-          <List order={index} subtitle={subtitle} cards={cards} />,
+          <List
+            key={`${subtitle}_${index}`}
+            order={index}
+            subtitle={subtitle}
+            cards={cards}
+          />,
         )}
         {shouldShowAddNewListBox
           ? <AddNewListBox>
