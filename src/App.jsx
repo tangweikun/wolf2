@@ -16,7 +16,6 @@ export default class App extends Component {
   render() {
     const sidebarList = [
       { name: 'TodoList', path: '/todo' },
-      { name: 'Charts', path: '/property' },
       { name: 'TaskList', path: '/taskList' },
     ]
 
