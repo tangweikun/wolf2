@@ -17,6 +17,7 @@ export default class App extends Component {
     const sidebarList = [
       { name: 'TodoList', path: '/todo' },
       { name: 'TaskList', path: '/taskList' },
+      { name: 'Typing', path: '/typing' },
     ]
 
     return (
@@ -24,7 +25,7 @@ export default class App extends Component {
         <div className="App-sidebar">
           <div className="App-sidebar-title">KeepLearning</div>
           <Menu>
-            {sidebarList.map(({ name, path }) =>
+            {sidebarList.map(({ name, path }) => (
               <MenuItem
                 key={name}
                 style={{ color: '#fff', width: '200px' }}
@@ -34,20 +35,16 @@ export default class App extends Component {
                 }}
               >
                 {name}
-              </MenuItem>,
-            )}
+              </MenuItem>
+            ))}
           </Menu>
         </div>
         <div>
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <span>
-              {this.state.title}
-            </span>
+            <span>{this.state.title}</span>
           </div>
-          <div className="App-body">
-            {this.props.children}
-          </div>
+          <div className="App-body">{this.props.children}</div>
         </div>
       </div>
     )
