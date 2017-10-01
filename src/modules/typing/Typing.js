@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Rx from 'rxjs'
+import axios from 'axios'
 
 export default class Typing extends Component {
   state = {
@@ -17,8 +17,31 @@ export default class Typing extends Component {
     return Math.round(wordsCount / (5 * ((endAt - startAt) / (1000 * 60)))) || 0
   }
 
+  handleInsertTyping = ({ startAt, endAt, wpm }) => {
+    axios
+      .post('typing', {
+        wpm,
+        startAt,
+        endAt,
+      })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   handleKeyDown = (keyCode, shiftKey) => {
-    const { wordsCount, completedSentence, remindingSentence, inputValue, startTimers } = this.state
+    const {
+      wordsCount,
+      completedSentence,
+      remindingSentence,
+      inputValue,
+      startTimers,
+      startAt,
+      endAt,
+    } = this.state
 
     const currentKeyCode = keyCode
 
@@ -38,6 +61,11 @@ export default class Typing extends Component {
       if (!startTimers) Object.assign(variables, { startTimers: true, startAt: new Date() })
       if (remindingSentence.slice(1) === '') {
         Object.assign(variables, { isEndTyping: true })
+        this.handleInsertTyping({
+          startAt,
+          endAt,
+          wpm: Math.round((wordsCount + 1) / (5 * ((endAt - startAt) / (1000 * 60)))) || 0,
+        })
       }
 
       this.setState({
@@ -49,14 +77,7 @@ export default class Typing extends Component {
   }
 
   render() {
-    const {
-      wordsCount,
-      completedSentence,
-      remindingSentence,
-      inputValue,
-      endAt,
-      startAt,
-    } = this.state
+    const { completedSentence, remindingSentence, inputValue, endAt, startAt } = this.state
 
     return (
       <div>
