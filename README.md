@@ -1,4 +1,6 @@
 # wolf
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/tangweikun/wolf.svg)](https://greenkeeper.io/)
 > Additional information or tag line
 
 Do something for fun!
