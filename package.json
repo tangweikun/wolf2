@@ -10,7 +10,7 @@
     "history": "^4.6.1",
     "http-server": "^0.10.0",
     "jest": "^21.2.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "material-ui": "^0.19.4",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
